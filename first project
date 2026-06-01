@@ -1,0 +1,14 @@
+from microbit import *
+ 
+name = "Jefferson"
+age = 20
+current_year = 2026
+ 
+# Calculate the year when I will be 100
+year_100 = current_year + (100 - age)
+ 
+# Scroll the message on the micro:bit LEDs
+display.scroll("Hello " + name)
+sleep(500)
+display.scroll("You will be 100 in " + str(year_100))
+ 
