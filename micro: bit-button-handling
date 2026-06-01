@@ -1,0 +1,18 @@
+from microbit import *
+ 
+while True:
+    if button_a.is_pressed() and button_b.is_pressed():
+        # Both buttons A and B
+        display.scroll("HI!")
+ 
+    elif button_a.is_pressed():
+        # Button A only
+        display.scroll("My name is Jefferson")
+ 
+    elif button_b.is_pressed():
+        # Button B only
+        display.scroll("I am 20")
+ 
+    else:
+        # No buttons pressed
+        display.show(Image.SAD)
