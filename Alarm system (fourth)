@@ -1,0 +1,22 @@
+from microbit import *
+
+import music
+ 
+while True:
+    if pin0.is_touched():   # Circuit complete (door closed / at rest)
+        display.show(Image.HAPPY)
+        sleep(500)
+ 
+    else:                   # Circuit broken (alarm triggered)
+        # Play Birthday song in the background
+        music.play(music.BIRTHDAY, wait=False)
+ 
+        # Flash images while the song is playing
+        for i in range(20):  # Repeat flashing
+            display.show(Image.HAPPY)
+            sleep(300)
+            display.show(Image.SAD)
+            sleep(300)
+ 
+        # Stop the music after flashing (optional)
+        music.stop()
