@@ -1,0 +1,20 @@
+ from microbit import *
+ 
+# Two frames of walking person
+walk1 = Image("00900:"
+              "00900:"
+              "00900:"
+              "09090:"
+              "90009")
+ 
+walk2 = Image("00900:"
+              "00900:"
+              "00900:"
+              "00990:"
+              "09009")
+ 
+while True:
+    display.show(walk1)
+    sleep(400)
+    display.show(walk2)
+    sleep(400)
