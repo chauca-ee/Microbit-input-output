@@ -16,6 +16,7 @@ A collection of BBC micro:bit projects built with MicroPython.
 ## Hardware
 - BBC micro:bit
 - USB-A cable
+- https://python.microbit.org/v/3 
 
 ## Language
 MicroPython
