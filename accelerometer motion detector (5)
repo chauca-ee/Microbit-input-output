@@ -1,0 +1,26 @@
+from microbit import *
+
+# Lower threshold = more sensitive
+threshold = 350
+
+while True:
+    x = accelerometer.get_x()
+    y = accelerometer.get_y()
+    z = accelerometer.get_z()
+
+    # Detect movement on different axes
+    if abs(x) > threshold and abs(y) < threshold and abs(z) < threshold:
+        display.show("X")  # left/right
+    elif abs(y) > threshold and abs(x) < threshold and abs(z) < threshold:
+        display.show("Y")  # forward/back
+    elif abs(z) > threshold and abs(x) < threshold and abs(y) < threshold:
+        display.show("Z")  # up/down
+    elif abs(x) > threshold and abs(y) > threshold and abs(z) < threshold:
+        display.show("2")  # two axes
+    elif abs(x) > threshold and abs(y) > threshold and abs(z) > threshold:
+        display.scroll("CRASH!")
+        sleep(1000)  # wait so it doesn't repeat too fast
+    else:
+        display.show("-")
+
+    sleep(100)
