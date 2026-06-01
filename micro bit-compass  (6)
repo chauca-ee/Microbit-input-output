@@ -1,0 +1,11 @@
+from microbit import *
+ 
+# Calibrate the compass first — rotate micro:bit until all LEDs light up
+compass.calibrate()
+ 
+while True:
+    # Get heading, divide by 30 to map 360 degrees into 12 clock positions
+    needle = ((15 - compass.heading()) // 30) % 12
+ 
+    # Display the clock image pointing toward North
+    display.show(Image.ALL_CLOCKS[needle])
